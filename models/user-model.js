@@ -9,7 +9,17 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: [true, "Password is required"]
-    }
+    },
+    playedGames: [{
+        quiz: {
+            type: Schema.Types.ObjectId,
+            ref: 'Quiz'
+        },
+        highScore: {
+            type: Number,
+            required: true
+        }
+    }]
 }, {
     timestamps: true
 })

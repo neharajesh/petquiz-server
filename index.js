@@ -13,7 +13,9 @@ const PORT = process.env.PORT;
 
 const authRouter = require("./routers/auth-router")
 const userRouter = require("./routers/user-router")
-const { verifyToken } = require("./middlewares/verify-signin")
+// const { verifyToken } = require("./middlewares/verify-signin")
+
+const quizRouter = require("./routers/quiz-router")
 
 app.all('/*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", 'POST, OPTIONS',  "*");
@@ -23,6 +25,8 @@ app.all('/*', function(req, res, next) {
 
 app.use("/auth", authRouter)
 app.use("/user", userRouter)
+
+app.use("/quiz", quizRouter)
 
 app.get("/", (req, res) => {
     res.json({success: true, message: "Loaded successfully"})
