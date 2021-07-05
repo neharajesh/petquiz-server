@@ -23,6 +23,7 @@ const QuizSchema = new Schema({
             required: true
         },
         explanation: String,
+        image: String,
         options: [{
             optionText: {
                 type: String,
