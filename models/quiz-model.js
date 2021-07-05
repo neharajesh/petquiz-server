@@ -6,7 +6,9 @@ const QuizSchema = new Schema({
         type: String,
         required: true
     },
+    image: String,
     categories: Array,
+    description: String,
     totalPoints: {
         type: Number,
         required: true
@@ -20,6 +22,7 @@ const QuizSchema = new Schema({
             type: Number,
             required: true
         },
+        explanation: String,
         options: [{
             optionText: {
                 type: String,
@@ -28,8 +31,7 @@ const QuizSchema = new Schema({
             isRight: {
                 type: Boolean,
                 required: true
-            },
-            explanation: String
+            }
         }]
     }]
 })

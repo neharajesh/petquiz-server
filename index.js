@@ -25,7 +25,7 @@ app.all('/*', function(req, res, next) {
 
 app.use("/auth", authRouter)
 app.use("/user", userRouter)
-
+ 
 app.use("/quiz", quizRouter)
 
 app.get("/", (req, res) => {
